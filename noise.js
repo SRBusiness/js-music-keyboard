@@ -1,10 +1,18 @@
+const playNote = function playNote(note) {
+  let idTag = note + "Audio";
+  let audio = document.getElementById(idTag);
+  audio.play();
+};
+
 $(document).ready( function() {
   $('.instrument').on('click','button', function(event) {
-    // console.log(`Clicked on "${ $(this).html()}" `);
-    let idTag = $(this).html() + "Audio"
-    // console.log(idTag);
-    var audio = document.getElementById(idTag);
-    // console.log(audio)
-    audio.play();
+    playNote($(this).html());
+  });
+
+  let notes = ['c','d','e','f','g','a','b'];
+  $('body').keydown((event) => {
+    if (notes.includes(event.key)){
+      playNote(event.key);
+    }
   });
 });
