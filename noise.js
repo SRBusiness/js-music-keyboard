@@ -1,10 +1,10 @@
 $(document).ready( function() {
   $('.instrument').on('click','button', function(event) {
-    console.log(`Clicked on <audio> "${ $(this).html()}" `);
+    // console.log(`Clicked on "${ $(this).html()}" `);
+    let idTag = $(this).html() + "Audio"
+    // console.log(idTag);
+    var audio = document.getElementById(idTag);
+    // console.log(audio)
+    audio.play();
   });
 });
-// //   $('#my-list').on('click', 'li', function(event) {
-//     alert(`Got a click on an <li> containing "${$(this).html()}"`);
-//   });
-//
-//   $('#my-list').append($('<li>Herbie Hancock</li>'));
